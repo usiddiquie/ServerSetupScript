@@ -71,7 +71,7 @@ SSS_ZELLIJ_VERSION=0.43.1 SSS_HELIX_VERSION=25.07.1 SSS_YAZI_VERSION=25.5.31 sss
 | `base-packages` (hidden) | curl, unzip, xz, git, certificates; pulled in by the download steps |
 | `path` | `~/.local/bin` on PATH for bash (`~/.profile`) and fish |
 | `fish` | installs fish (apt) |
-| `fish-default-shell` | adds fish to `/etc/shells`, sets it as your login shell |
+| `fish-default-shell` | adds fish to `/etc/shells`, sets it as your login shell. For directory-service accounts (LDAP/AD, not in `/etc/passwd`) where `usermod`/`chsh` cannot work, it makes interactive logins switch to fish from `~/.profile` instead (skip once with `NO_FISH=1`; `scp` and `ssh host cmd` stay in bash) |
 | `zellij` | prebuilt binary into `~/.local/bin` |
 | `zellij-layout` | `default_layout "compact"` (no bottom command bar), startup tips and release notes off |
 | `zellij-autostart` | on interactive SSH logins, attach to the newest live zellij session or start one |
